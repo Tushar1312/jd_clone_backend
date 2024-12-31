@@ -1,6 +1,5 @@
 const Districts = require("../models/DistrictsSchema");
-const Talukas = require("../models/TalukasSchema")
-
+const Talukas = require("../models/TalukasSchema");
 
 exports.getAllTalukas = async (req, res) => {
 
