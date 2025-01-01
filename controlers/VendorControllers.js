@@ -1,5 +1,6 @@
 const Vendor = require("../models/VendorSchema")
 
+
 exports.vendorLogin = async (req, res) => {
     const { Email, Password } = req.body;
 
@@ -14,3 +15,19 @@ exports.vendorLogin = async (req, res) => {
         res.json({ status: 422, message: "User not found" });
     }
 }
+
+exports.venderRegistration = async (req, res) => {
+    const { name, email, mobile, password } = req.body;
+  
+    const result = await Vendor.create({
+      name: name,  
+      mobile: mobile,
+      email: email,
+      password: password,
+    });
+    if (result) {
+      res.json({ status: 200, message: "user created successfully" });
+    } else {
+      res.json({ status: 422, message: "User not created" });
+    }
+  };

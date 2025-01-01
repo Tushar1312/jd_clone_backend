@@ -10,8 +10,22 @@ exports.userRegistration = async (req, res) => {
     password: password,
   });
   if (result) {
-    res.json({ status: 200, message: "not a problem" });
+    res.json({ status: 200, message: "user create successfully" });
   } else {
     res.json({ status: 422, message: "User not created" });
+  }
+
+};
+exports.userlogin=async(req,res)=>{
+  const{email,password}=req.body;
+
+  const result = await Users.findOne({
+    email:email,
+    password:password,
+  });
+  if (result) {
+    res.json({ status: 200, message: "login successfully" });
+  } else {
+    res.json({ status: 422, message: "User not found" });
   }
 };
