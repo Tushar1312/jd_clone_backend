@@ -8,14 +8,25 @@ const ListingSchema = new mongoose.Schema(
         location: String,
         opening_hour: String,
         year_of_experience: String,
-        // segment: String,
-        // packages_offered: String,
-        // seating_capacity: String,
-        // services: String,
-        // brands: String,
-        // price_listing: {
+          // price_listing: {
         //     type: { String }
         // },
+        segment:  {
+            type: { String }
+        },
+         packages_offered: {
+            type: { String }
+        },
+         seating_capacity:  {
+            type: { String }
+        },
+         services:  {
+            type: { String }
+        },
+         brands: {
+            type: { String }
+        },
+      
         uplod_images: {
             type: { String }
         },
